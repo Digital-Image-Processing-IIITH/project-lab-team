@@ -23,12 +23,12 @@ To create an application that allows the users to generate tangles from a gramma
 
 ### Goals Within The Implementation
 
-1. `Grammar`
+### 1. `Grammar`
 
 In the implementation shapes are arbitrary two dimensional polygons with holes, where their boundaries are represented as highly-tessellated closed curves.
 The core idea is that all the grammar operators work on groups of shapes, both in input and output. We aim to use code to represent tangle grammars which explicitly express the grouping information of every shape, in a way that this information is directly accessible and modifiable by specific operators.
 
-2. `Operators`
+### `Operators`
 
 We aim to code the compact set of operators that are efficient, closed under any set of arbitrary shapes, and that are able to encode a wide amount of variations in the generated tangles as proposed in the paper. There are several operators that work on the grammar and they are broadly divided into three types:
 
@@ -47,17 +47,17 @@ We aim to code the compact set of operators that are efficient, closed under any
     - Filling: Sets the background color of a shape
     - Stippling: Stipples the shape with geometrical details like dots, dashes, curves
 
-3. `Shape Perturbation`
+### 3. `Shape Perturbation`
 
 Simulating the organic feel of our generated tangles by applying a perturbation for all subdivided shapes.
 
-4. `Web Application`
+### 4. `Web Application`
 
 Here we seek to implemented the tangle grammar in a interactive system that is able to generate tangles automatically, starting from any initial set of shapes. This tool can be used both for the solely automatic generation of a tangle, following the expansion process described in the paper and for the editing of an already generated tangle, to better adapt the final result to the user’s likings.
 
 
 
-### Three Interation Modes
+#### `Three Interation Modes`
 - History Navigation
 
 Allows user to move through the expansion history of a tangle by selecting a shape.
@@ -72,7 +72,7 @@ When an expansion step is selected, using history navigation, the user can inter
 
 
 
-### Features
+#### `Features`
 - Dropdown list for grammar selection
 - Preview of the tangle style achievable by the selected grammar
 - Button used for starting the generation of a tangle
@@ -94,11 +94,13 @@ Tangles are a form of structured two dimensional art characterized by repeating,
 The tangles are formally modelled with group grammars that explicitly handle the grouping of shapes necessary to represent tangle repetitions. A small set of expressive geometric, grouping and decorative operators are used to show that they can respectively express complex tangles patterns and sub-pattern distributions, with relatively simple grammars.  We aim to validate the results of the paper which shows how group grammars can produce a wide variety of patterns in a few seconds which on the flip side would take artists hours of tedious and time consuming work. 
 
 ### How things will be done?
-// TODO
+
+The code will be written for the processing of grammars and operators will be written `C++`, the grammars and shapes will be represented using `JSON` in a readable manner, the web application will be displayed using `HTML5` and `CSS` and all tangles will be created in the `SVG` format.
 
 ## `Results`
 ### What will be done?
-// TODO
+
+The proposed ideas in the paper regarding the grammars, operators and shape perturbation required to make artictic tangles will be implemented and diplayed via a user friendly web application.
 
 ### Final outcome
 
@@ -129,7 +131,7 @@ A set of images showing the preview of the tangle style achievable by the select
 
 ### Obtaining the datasets?
 
-// TODO
+Since this dataset is not availbale online, we plan to contact the authors as a the first option. In the event that this does not succeed we will synthesise the shapes and grammars in a random fashion. 
 
 
 
