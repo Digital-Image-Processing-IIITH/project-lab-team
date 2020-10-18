@@ -28,7 +28,7 @@ To create an application that allows the users to generate tangles from a gramma
 In the implementation shapes are arbitrary two dimensional polygons with holes, where their boundaries are represented as highly-tessellated closed curves.
 The core idea is that all the grammar operators work on groups of shapes, both in input and output. We aim to use code to represent tangle grammars which explicitly express the grouping information of every shape, in a way that this information is directly accessible and modifiable by specific operators.
 
-### `Operators`
+### 2. `Operators`
 
 We aim to code the compact set of operators that are efficient, closed under any set of arbitrary shapes, and that are able to encode a wide amount of variations in the generated tangles as proposed in the paper. There are several operators that work on the grammar and they are broadly divided into three types:
 
@@ -123,7 +123,7 @@ An interactive system that is able to generate tangles automatically, starting f
 | Web application features |  12 November 2020 | 
 | Final Project Evaluation |  19 November 2020 | 
 
-## `Obtaining Dataset`
+## `Datasets`
 
 A dataset of grammars to generate the tangles is required for the implementation of the proposed algorithm.
 
@@ -131,7 +131,7 @@ A set of images showing the preview of the tangle style achievable by the select
 
 ### Obtaining the datasets?
 
-Since this dataset is not availbale online, we plan to contact the authors as a the first option. In the event that this does not succeed we will synthesise the shapes and grammars in a random fashion. 
+Since this dataset is not availbale online, we plan to contact the authors as a the first option. In the event that this does not succeed we will synthesise the shapes and grammars in a random fashion as `JSON` files.
 
 
 
