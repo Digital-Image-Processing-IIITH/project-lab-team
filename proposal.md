@@ -131,7 +131,7 @@ A set of images showing the preview of the tangle style achievable by the select
 
 ### Obtaining the datasets?
 
-Since this dataset is not availbale online, we plan to contact the authors as a the first option. In the event that this does not succeed we will synthesise the shapes and grammars in a random fashion as `JSON` files.
+Since this dataset is not available online, we plan to contact the authors as a the first option. In the event that this does not succeed we will synthesise the shapes and grammars in a random fashion as `JSON` files.
 
 
 
