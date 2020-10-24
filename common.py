@@ -1,4 +1,5 @@
 import enum
+import numpy
 
 PARAM_SIZE = 20
 TAG_SIZE = 16
@@ -63,4 +64,22 @@ class Sets(enum.Enum):
     xor_op = 3
     sum_op = 4
     place_in_op = 5
+
+identity_affine_2r = np.array(([1.0, 0.0], [0.0, 1.0], [0.0, 0.0]), dtype = np.float)
+x2r = np.array([1, 0])
+y2r = np.array([0, 1])
+identity_frame2r = np.array(([1, 0], [0, 1], [0, 0]), dtype = np.int)
+
+grammar_filename = "grammars/test_time_grammar_test_teaser.json"
+
+EPS_1 = 0.0001
+EPS_2 = 0.000000001
+EPS_3 = 0.000001
+
+def frobenius_norm(m):
+    return np.linalg.norm(m, 'fro')
+
+
+
+
 
