@@ -102,6 +102,30 @@ def expand(tangle):
             newgroup.append(tangle.group[i])
             newshape.append(tangle.shape[i])
     # print("sn is ",len(Sn))
+    for i in range(len(Sn)):
+        newtype_.append(Tn[i])
+        newgroup.append(Gn[i])
+        newshape.append(Sn[i])
+
+
+    tangle.type_=newtype_.copy()
+    tangle.group=newgroup.copy()
+    tangle.shape=newshape.copy()
+                
+
+    return tangle
+    
+while True:
+    flag1=0
+    for i in range(len(T.type_)):
+        if(T.type_[i].terminal==0):
+            flag1=1
+    if(flag1==0):
+        break
+ 
+    T=expand(T)
+
+print(T.shape,T.group)
 
 
 
