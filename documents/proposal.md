@@ -19,13 +19,14 @@
 
 ## `Main Goals`
 
-To create an application that allows the users to generate tangles from a grammar and a set of geometric, grouping and decorative operators in an interactive and seamless manner. 
+To generate tangles from a grammar and a set of geometric, grouping and decorative operators in a seamless manner. 
 
 ### Goals Within The Implementation
 
 ### 1. `Grammar`
 
 In the implementation shapes are arbitrary two dimensional polygons with holes, where their boundaries are represented as highly-tessellated closed curves.
+
 The core idea is that all the grammar operators work on groups of shapes, both in input and output. We aim to use code to represent tangle grammars which explicitly express the grouping information of every shape, in a way that this information is directly accessible and modifiable by specific operators.
 
 ### 2. `Operators`
@@ -51,83 +52,48 @@ We aim to code the compact set of operators that are efficient, closed under any
 
 Simulating the organic feel of our generated tangles by applying a perturbation for all subdivided shapes.
 
-### 4. `Web Application`
-
-Here we seek to implemented the tangle grammar in a interactive system that is able to generate tangles automatically, starting from any initial set of shapes. This tool can be used both for the solely automatic generation of a tangle, following the expansion process described in the paper and for the editing of an already generated tangle, to better adapt the final result to the user’s likings.
-
-
-
-#### `Three Interation Modes`
-- History Navigation
-
-Allows user to move through the expansion history of a tangle by selecting a shape.
-
-- Re-expansion
-
-Allows the re-execution of a specific expansion step. 
-
-- Parameters Modification
-
-When an expansion step is selected, using history navigation, the user can interactively modify the parameters of the operator executed at that step.
-
-
-
-#### `Features`
-- Dropdown list for grammar selection
-- Preview of the tangle style achievable by the selected grammar
-- Button used for starting the generation of a tangle
-- Slider showing the current expansion step, that can also be used to visualize previous steps in the generation history
-- Slider shows the step in which the selected shape was generated
-- Buttons used to switch between the selection mode and the drawing mode, used to provide new curves for the re-execution of a rule
-- Button used for the re-expansion
-- Data relative to the rule that created the selected shape
-- Sliders used for parameters modification
-
- 
-
-
 ## `Problem Definition`
 
 ### What is the problem?
-Tangles are a form of structured two dimensional art characterized by repeating, recursive patterns. The aim is to present an application to procedurally generate realistic tangle drawings controlled by users in an interactive and intuitive way. 
+Tangles are a form of structured two dimensional art characterized by repeating, recursive patterns. The aim is to procedurally generate realistic tangle drawings controlled by users using a shape grammar. 
 
 The tangles are formally modelled with group grammars that explicitly handle the grouping of shapes necessary to represent tangle repetitions. A small set of expressive geometric, grouping and decorative operators are used to show that they can respectively express complex tangles patterns and sub-pattern distributions, with relatively simple grammars.  We aim to validate the results of the paper which shows how group grammars can produce a wide variety of patterns in a few seconds which on the flip side would take artists hours of tedious and time consuming work. 
 
 ### How things will be done?
 
-The code will be written for the processing of grammars and operators will be written `C++`, the grammars and shapes will be represented using `JSON` in a readable manner, the web application will be displayed using `HTML5` and `CSS` and all tangles will be created in the `SVG` format.
+The code will be written for the processing of grammars and operators will be written in `Python`, the grammars and shapes will be represented using `JSON` in a readable manner, and all tangles for both input and output will be created in the `SVG` format.
 
 ## `Results`
 ### What will be done?
 
-The proposed ideas in the paper regarding the grammars, operators and shape perturbation required to make artictic tangles will be implemented and diplayed via a user friendly web application.
+The proposed ideas in the paper regarding the grammars, operators and shape perturbation required to make artictic tangles will be implemented.
 
 ### Final outcome
 
-An interactive system that is able to generate tangles automatically, starting from any initial set of shapes. This tool can be used both for the solely automatic generation of a tangle, following the expansion process described in the paper and for the editing of an already generated tangle, to better adapt the final result to the user’s likings.
+A system that is able to generate tangles automatically, starting from any initial set of shapes. This tool can be used for the  automatic generation of an organic looking tangle.
 
 
 ## `Milestones And Timeline`
 
 | Milestone   |      Date     | 
 |----------|:-------------:|
-| Coding the grammar |  20 October 2020 | 
-| Grouping Operators |  22 October 2020 | 
-| Geometric Operators |  24 October 2020 | 
-| Decorative Operators |  26 October 2020 | 
-| Shape Perturbation |  29 October 2020 | 
+| Proposal Submission |  20 October 2020 | 
+| Literature review |  22 October 2020 | 
+| Structuring the grammar |  24 October 2020 | 
+| Parsing rules from JSONs |  26 October 2020 | 
+| Grouping Operators |  29 October 2020 | 
 | Mid Project Evaluation |  31 October 2020 | 
-| History Navigation mode |  3 November 2020 | 
-| Re-expansion mode |  6 November 2020 | 
-| Parameters Modification mode |  9 November 2020 | 
-| Web application features |  12 November 2020 | 
+| Geometric Operators |  3 November 2020 | 
+| Decorative Operators |  6 November 2020 | 
+| Shape Perturbation |  9 November 2020 | 
+| Testing And Creating Tangles |  12 November 2020 | 
 | Final Project Evaluation |  19 November 2020 | 
 
 ## `Datasets`
 
 A dataset of grammars to generate the tangles is required for the implementation of the proposed algorithm.
 
-A set of images showing the preview of the tangle style achievable by the selected grammar is required for display on the interface of the web application.
+A set of output images is required to show the possible tangles generated by the program.
 
 ### Obtaining the datasets?
 
