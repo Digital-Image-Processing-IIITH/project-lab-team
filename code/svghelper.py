@@ -4,11 +4,11 @@ import sys
 
 filename = 'woman'
 
-svg = Parser.parse_file(filename + '.svg')
+svg = Parser.parse_file('svg/' + filename + '.svg')
 print('Image is {} by {}.'.format(svg.width, svg.height))
 
 R = Rasterizer()
 buffer = R.rasterize(svg, svg.width, svg.height)
 print(sys.getsizeof(svg))
 image = Image.frombytes('RGBA', (svg.width, svg.height), buffer)
-image.save(filename + '.png') 
+image.save('png/' + filename + '.png') 
