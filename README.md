@@ -4,6 +4,6 @@ Implementation of the *SIGGRAPH 2016* paper [gTangle: A Grammar for the Procedur
 
 - Proposal for the project timeline can be found [here](documents/proposal.md)
 
-- Mid evaluations slides are [here](documents/gTangle&#32;Presentation.pdf)
+- Mid evaluations slides are [here](https://docs.google.com/presentation/d/17l0Tkhzg3QempJqMyVa7Vts7_oPK9UyUCqe227VFLWU/edit?usp=sharing)
 
 - Project guidelines are [here](documents/guidelines.md)
