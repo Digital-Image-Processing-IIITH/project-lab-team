@@ -1,37 +1,5 @@
 class CSGTree:
-    """ Contructive Solid Geometry Tree.
-    Perhaps the best way of describing supported operations is using context
-    free grammar:
-    * ``mesh`` operation: This operation is always a leaf node of the tree.
-        >>> tree = pymesh.CSGTree({"shape": mesh})
-    * ``union`` operation:
-        >>> tree = pymesh.CSGTree({"union":
-        ...         [TREE_1, TREE_2, ..., TREE_N]
-        ...     })
-    * ``intersection`` operations:
-        >>> tree = pymesh.CSGTree({"intersection":
-        ...         [TREE_1, TREE_2, ..., TREE_N]
-        ...     })
-    * ``difference`` operations:
-        >>> tree = pymesh.CSGTree({"difference":
-        ...         [TREE_1, TREE_2]
-        ...     })
-    * ``symmetric_difference`` operations:
-        >>> tree = pymesh.CSGTree({"symmetric_difference":
-        ...         [TREE_1, TREE_2]
-        ...     })
-    Where ``TREE_X`` could be any of the nodes defined above.
-    A tree can be build up incrementally:
-        >>> left_tree = pymesh.CSGTree({"shape": mesh_1})
-        >>> right_tree = pymesh.CSGTree({"shape": mesh_2})
-        >>> tree = pymesh.CSGTree({"union": [left_tree, right_tree]})
-        >>> mesh = tree.mesh
-    Or constructed from a dict:
-        >>> tree = pymesh.CSGTree({"union":
-        ...         [{"shape": mesh_1}, {"shape": mesh_2}]
-        ...     })
-        >>> mesh = tree.mesh
-    """
+    """ Contructive Solid Geometry Tree."""
     def __init__(self, tree):
         """
         Args:
