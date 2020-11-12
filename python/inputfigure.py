@@ -25,10 +25,12 @@ def make_polyline_rect(A, B):
     seg4 = Line(minX + maxY * 1j, minX + minY * 1j)
     return Path(seg1, seg2, seg3, seg4)
 
-def append_paths(x, y):
-    for i in y:
-        x.append(i)
-    return x
+def append_paths(pathsList):
+    path = Path()
+    for i in pathsList:
+        for j in i:
+            path.append(j)
+    return path
 
 # Little squares
 s5_1 = make_polyline_rect([350.0, -325.0], [400.0, -275.0])
@@ -58,14 +60,8 @@ s3 = make_polyline_rect([-300.0, -300.0], [300.0, 300.0])
 # disvg(s2)
 # disvg(s3)
 
-path = append_paths(s1, s2)
-path = append_paths(path, s3)
-path = append_paths(path, s5_1)
-path = append_paths(path, s5_2)
-path = append_paths(path, s5_3)
-path = append_paths(path, s5_4)
-path = append_paths(path, s5_5)
-path = append_paths(path, s5_6)
-path = append_paths(path, s5_7)
 
+# Some tag nonsense is happening here
+
+path = append_paths([s1, s2, s3, s5_1, s5_2, s5_3, s5_4, s5_5, s5_6, s5_7])
 disvg(path)
