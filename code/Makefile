@@ -16,7 +16,7 @@ CFLAGS = -Wall -g -std=c++14
 
 # define any directories containing header files other than /usr/include
 #
-INCLUDES = -I./external -I../external  -I./tinygrammar
+INCLUDES = -I./external -I../external  -I./gTangle
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
@@ -29,21 +29,21 @@ LFLAGS =  -L./lib
 LIBS = -lpthread -lm 
 
 # define the C source files
-SRCS = tinygrammar/animator.cpp\
-			 tinygrammar/animator_matrix.cpp\
-			 tinygrammar/clipper_methods.cpp\
-			 tinygrammar/csg_tree.cpp\
-			 tinygrammar/draw.cpp\
-			 tinygrammar/expansion_manager.cpp\
-			 tinygrammar/grammar_core.cpp\
-			 tinygrammar/input_figures.cpp\
-			 tinygrammar/main_timeline.cpp\
-			 tinygrammar/operator.cpp\
-			 tinygrammar/rule.cpp\
-			 tinygrammar/shape.cpp\
-			 tinygrammar/svg.cpp\
-			 tinygrammar/tangle_utilities.cpp\
-			 tinygrammar/time_manager.cpp\
+SRCS = gTangle/animator.cpp\
+			 gTangle/animator_matrix.cpp\
+			 gTangle/clipper_methods.cpp\
+			 gTangle/csg_tree.cpp\
+			 gTangle/draw.cpp\
+			 gTangle/expansion_manager.cpp\
+			 gTangle/grammar_core.cpp\
+			 gTangle/input_figures.cpp\
+			 gTangle/main_timeline.cpp\
+			 gTangle/operator.cpp\
+			 gTangle/rule.cpp\
+			 gTangle/shape.cpp\
+			 gTangle/svg.cpp\
+			 gTangle/tangle_utilities.cpp\
+			 gTangle/time_manager.cpp\
 			 external/jsonxx.cpp\
 			 external/format.cpp\
 			 external/clipper/clipper.cpp\
@@ -60,7 +60,7 @@ SRCS = tinygrammar/animator.cpp\
 OBJS = $(SRCS:.cpp=.o)
 
 # define the executable file 
-MAIN = gTangle
+MAIN = tangles
 
 #
 # The following part of the makefile is generic; it can be used to 
