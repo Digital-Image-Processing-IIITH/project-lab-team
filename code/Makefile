@@ -29,7 +29,7 @@ LFLAGS =  -L./lib
 LIBS = -lpthread -lm 
 
 # define the C source files
-SRCS = gTangle/animator.cpp\
+SRCS = 		 gTangle/animator.cpp\
 			 gTangle/animator_matrix.cpp\
 			 gTangle/clipper_methods.cpp\
 			 gTangle/csg_tree.cpp\
