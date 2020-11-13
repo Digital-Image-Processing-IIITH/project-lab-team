@@ -2,6 +2,9 @@
 	"grammar_name" : "Test Time Grammar", 
 	"seed" : -1, 
 	"framerate" : 10.0,
+	"bbox" : [-1200.0, -1200.0, 1200.0, 1200.0],
+	"dry_run" : false,
+
 	"rules" : [
 		{ 
 			"rule_name" : "init_1",
