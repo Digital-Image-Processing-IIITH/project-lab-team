@@ -9,6 +9,7 @@
 #ifndef common_h
 #define common_h
 
+#include <stdarg.h>
 #include <string>
 #include <vector>
 #include <array>
@@ -19,7 +20,6 @@
 #include <iostream>
 #include <sstream>
 #include <random>
-#include <stdarg.h>
 
 #include "tree.hh"
 #include "yocto_math.h"
@@ -31,7 +31,7 @@ using namespace std;
 
 #define ACTIVE_GRAMMAR 2
 
-#define IS_DEBUG 0
+#define IS_DEBUG 1
 
 static constexpr double resolution = 2;
 static constexpr double matrix_resolution = 100;
@@ -117,7 +117,9 @@ typedef ym_vec<int, TAG_SIZE> rule_tags;
 
 typedef ym_vec<double, PARAM_SIZE> anim_params;
 
-static string grammar_filename = "grammars/test_time_grammar_woman.json";
+//static string grammar_filename = "grammars/test_time_grammar_test_teaser.json";
+static string grammar_filename = "grammars/test_time_grammar_ls.json";
+//static string grammar_filename = "grammars/test_time_grammar_woman.json";
 
 // ==============================================
 // ====== METHODS FOR LOG/EXP OF MATRICES =======

@@ -9,6 +9,7 @@
 #ifndef grammar_core_h
 #define grammar_core_h
 
+#include <climits>
 #include "rule.h"
 #include "time_manager.h"
 

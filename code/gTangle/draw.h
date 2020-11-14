@@ -9,10 +9,9 @@
 #ifndef draw_h
 #define draw_h
 
-
+#include "ui.h"
 #include "shape.h"
 
-#define NANOVG_GL2
 #include "../external/nanovg/nanovg.h"
 #include "../external/nanovg/nanovg_gl.h"
 
@@ -35,19 +34,19 @@ struct DrawContext {
     virtual void draw_text(const ym_vec2r& p, const string& msg, double size, const ym_vec4f& stroke) = 0;
 };
 
-// struct NVGContext : DrawContext {
-//     NVGcontext* vg = nullptr;
+struct NVGContext : DrawContext {
+    NVGcontext* vg = nullptr;
     
-//     NVGContext();
+    NVGContext();
     
-//     virtual void begin_frame(const ym_vec2i& wh, const ym_vec2r& offset, const ym_vec2r& scale) override;
-//     virtual void end_frame(const ym_vec2r& offset, const ym_vec2r& scale) override;
+    virtual void begin_frame(const ym_vec2i& wh, const ym_vec2r& offset, const ym_vec2r& scale) override;
+    virtual void end_frame(const ym_vec2r& offset, const ym_vec2r& scale) override;
     
-//     virtual void draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill, string tag = "") override;
-//     virtual void draw_line(const polyline2r& curve, const ym_vec4f& stroke) override;
-//     virtual void draw_point(const ym_vec2r& p, const ym_vec4f& stroke) override;
-//     virtual void draw_text(const ym_vec2r& p, const string& msg, double size, const ym_vec4f& stroke) override;
-// };
+    virtual void draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill, string tag = "") override;
+    virtual void draw_line(const polyline2r& curve, const ym_vec4f& stroke) override;
+    virtual void draw_point(const ym_vec2r& p, const ym_vec4f& stroke) override;
+    virtual void draw_text(const ym_vec2r& p, const string& msg, double size, const ym_vec4f& stroke) override;
+};
 
 struct SVGContext : DrawContext {
     string  svg = "";

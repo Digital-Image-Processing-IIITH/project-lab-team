@@ -71,23 +71,21 @@ int main(int argc, const char * argv[]) {
     auto bbox = ym_range2r({-2000.0, -2000.0}, {2000.0, 2000.0});
     
     auto am  = AnimatorMatrix(bbox, {{1.0, 0.0},{0.0, 1.0}, {1.0, -1.0}});
-
-    
-    auto anim_new = Animator(anim_single, {am, {frame_num}, anim_single});
+    auto anim_new = Animator(anim_single, {am, {frame_num}, anim_eulerian});
     
     auto am2  = AnimatorMatrix(bbox, {{0.99, 0.0},{0.0, 0.99}, {0.0, 0.0}});
-    auto anim_new2 = Animator(anim_single, {am2, {frame_num}, anim_single});
+    auto anim_new2 = Animator(anim_single, {am2, {frame_num},anim_eulerian});
     
     auto anim_new3 = Animator(anim_group, {move_towards_point(bbox, {-300.0, 0.0}, 25.0), {frame_num}, anim_group});
     
     auto anim_new4 = Animator(anim_group, {move_towards_point(bbox, {1000.0, 0.0}, 25.0), {frame_num}, anim_group});
     
     auto am2_g  = AnimatorMatrix(bbox, {{0.95, 0.0},{0.0, 0.95}, {0.0, 0.0}});
-    auto anim_new2_g = Animator(anim_single, {am2_g, {frame_num}, anim_single});
+    auto anim_new2_g = Animator(anim_single, {am2_g, {frame_num}, anim_eulerian});
     
     auto angle = 5.0 * ym_pi / 180.0;
     auto am5_rot  = AnimatorMatrix(bbox, {{cos(angle), -1.0 * sin(angle)},{sin(angle), cos(angle)}, {0.0, 0.0}});
-    auto anim_new5_rot = Animator(anim_single, {am5_rot, {frame_num}, anim_single});
+    auto anim_new5_rot = Animator(anim_single, {am5_rot, {frame_num}, anim_eulerian});
     
     for (auto i = 0; i < frame_num; i++){
         CSGTree::UpdateLeafNode(tree, {n2}, anim_new2, i);
@@ -109,9 +107,9 @@ int main(int argc, const char * argv[]) {
         if (i > 40){
             CSGTree::UpdateLeafNode(tree, {n2} , anim_new5_rot, i);
         }
-        printf("Yeet");
+        
         save_svg(tree, {800, 800}, {400, 400}, {1.0, 1.0}, std::to_string(i+1));
     }
 
-    printf("end main");
+    printf("End main");
 }

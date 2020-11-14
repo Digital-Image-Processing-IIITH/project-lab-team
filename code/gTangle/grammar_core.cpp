@@ -10,8 +10,7 @@
 
 #include <fstream>
 #include <streambuf>
-#include "../external/jsonxx.h"
-#include <climits>
+#include "jsonxx.h"
 
 using namespace jsonxx;
 

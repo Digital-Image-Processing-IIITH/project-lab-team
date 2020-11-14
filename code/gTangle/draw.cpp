@@ -6,6 +6,9 @@
 //  Copyright © 2016 visgraph. All rights reserved.
 //
 
+#include <GL/gl.h>
+#include <GL/glext.h>
+
 #include "draw.h"
 
 void DrawContext::draw_shape(TangleShape* shape, bool draw_frames, bool draw_as_points,
@@ -17,8 +20,8 @@ void DrawContext::draw_shape(TangleShape* shape, bool draw_frames, bool draw_as_
         draw_polygon(shape->poly, stroke, shape->invert ? ym_vec4f(0.f, 0.f, 0.f, 1.f) : fill);
     }
     if(draw_frames) {
-        draw_line({shape->frame.o,shape->frame.o+shape->frame.x*5}, {1, 0, 0, 0.5f});
-        draw_line({shape->frame.o,shape->frame.o+shape->frame.y*5}, {0, 0, 1, 0.5f});
+        draw_line({shape->frame.o,shape->frame.o+shape->frame.x*5}, {1,0,0,0.5f});
+        draw_line({shape->frame.o,shape->frame.o+shape->frame.y*5}, {0,0,1,0.5f});
     }
 }
 
@@ -33,81 +36,81 @@ void DrawContext::draw_labels(const vector<string>& labels) {
     }
 }
 
-// void NVGContext::draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill, string tag) {
-//     nvgBeginPath(vg);
-//     auto hole = false;
-//     nvgStrokeWidth(vg, 1.0f);
-//     for(auto&& curve : poly) {
-//         auto first = true;
-//         for(auto&& p : curve) {
-//             if(first) {
-//                 nvgMoveTo(vg, p.x, p.y);
-//                 first = false;
-//             } else nvgLineTo(vg, p.x, p.y);
-//         }
-//         nvgClosePath(vg);
-//         if(hole) nvgPathWinding(vg, NVG_HOLE);
-//         hole = true;
-//     }
-//     if(fill.w > 0) {
-//         nvgFillColor(vg, nvgRGBA(fill.x, fill.y, fill.z, fill.w * 255.0));
-//         nvgFill(vg);
-//     }
-//     if(stroke.w > 0) {
-//         nvgStrokeColor(vg, nvgRGBA(stroke.x, stroke.y, stroke.z, stroke.w * 255.0));
-//         nvgStroke(vg);
-//     }
-// }
+void NVGContext::draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill, string tag) {
+    nvgBeginPath(vg);
+    auto hole = false;
+    nvgStrokeWidth(vg, 1.0f);
+    for(auto&& curve : poly) {
+        auto first = true;
+        for(auto&& p : curve) {
+            if(first) {
+                nvgMoveTo(vg, p.x, p.y);
+                first = false;
+            } else nvgLineTo(vg, p.x, p.y);
+        }
+        nvgClosePath(vg);
+        if(hole) nvgPathWinding(vg, NVG_HOLE);
+        hole = true;
+    }
+    if(fill.w > 0) {
+        nvgFillColor(vg, nvgRGBA(fill.x, fill.y, fill.z, fill.w * 255.0));
+        nvgFill(vg);
+    }
+    if(stroke.w > 0) {
+        nvgStrokeColor(vg, nvgRGBA(stroke.x, stroke.y, stroke.z, stroke.w * 255.0));
+        nvgStroke(vg);
+    }
+}
 
-// void NVGContext::draw_line(const polyline2r& curve, const ym_vec4f& stroke) {
-//     nvgBeginPath(vg);
-//     auto first = true;
-//     for(auto&& p : curve) {
-//         if(first) {
-//             nvgMoveTo(vg, p.x, p.y);
-//             first = false;
-//         } else nvgLineTo(vg, p.x, p.y);
-//     }
-//     nvgStrokeColor(vg, nvgRGBA(255*stroke.x, 255*stroke.y, 255*stroke.z, 255*stroke.w));
-//     nvgStroke(vg);
-// }
+void NVGContext::draw_line(const polyline2r& curve, const ym_vec4f& stroke) {
+    nvgBeginPath(vg);
+    auto first = true;
+    for(auto&& p : curve) {
+        if(first) {
+            nvgMoveTo(vg, p.x, p.y);
+            first = false;
+        } else nvgLineTo(vg, p.x, p.y);
+    }
+    nvgStrokeColor(vg, nvgRGBA(255*stroke.x, 255*stroke.y, 255*stroke.z, 255*stroke.w));
+    nvgStroke(vg);
+}
 
-// void NVGContext::draw_point(const ym_vec2r& p, const ym_vec4f& stroke) {
-//     nvgBeginPath(vg);
-//     nvgMoveTo(vg, p.x, p.y);
-//     nvgLineTo(vg, p.x + 1, p.y + 1);
-//     nvgStrokeColor(vg, nvgRGBA(255*stroke.x, 255*stroke.y, 255*stroke.z, 255*stroke.w));
-//     nvgStroke(vg);
-// }
+void NVGContext::draw_point(const ym_vec2r& p, const ym_vec4f& stroke) {
+    nvgBeginPath(vg);
+    nvgMoveTo(vg, p.x, p.y);
+    nvgLineTo(vg, p.x + 1, p.y + 1);
+    nvgStrokeColor(vg, nvgRGBA(255*stroke.x, 255*stroke.y, 255*stroke.z, 255*stroke.w));
+    nvgStroke(vg);
+}
 
-// void NVGContext::draw_text(const ym_vec2r& p, const string& text, double size, const ym_vec4f& stroke) {
-//     nvgFontSize(vg, size);
-//     nvgFontFace(vg, "default");
-//     nvgFillColor(vg, nvgRGBA(stroke.x*255, stroke.y*255, stroke.z*255, stroke.w*255));
-//     nvgBeginPath(vg);
-//     nvgText(vg, p.x, p.y, text.c_str(), NULL);
-//     nvgRestore(vg);
-// }
+void NVGContext::draw_text(const ym_vec2r& p, const string& text, double size, const ym_vec4f& stroke) {
+    nvgFontSize(vg, size);
+    nvgFontFace(vg, "default");
+    nvgFillColor(vg, nvgRGBA(stroke.x*255, stroke.y*255, stroke.z*255, stroke.w*255));
+    nvgBeginPath(vg);
+    nvgText(vg, p.x, p.y, text.c_str(), NULL);
+    nvgRestore(vg);
+}
 
-// NVGContext::NVGContext() {
-//     vg = nvgCreateGL2(NVG_ANTIALIAS | NVG_STENCIL_STROKES);
-//     vg = NULL;
-//     nvgCreateFont(vg, "default", "resources/open-sans/OpenSans-Regular.ttf");
-// }
+NVGContext::NVGContext() {
+    //vg = NULL;
+    vg = nvgCreateGL2(NVG_ANTIALIAS | NVG_STENCIL_STROKES); 
+    nvgCreateFont(vg, "default", "resources/open-sans/OpenSans-Regular.ttf");
+}
 
-// void NVGContext::begin_frame(const ym_vec2i& wh, const ym_vec2r& offset, const ym_vec2r& scale) {
-//     //glClearColor(255, 255, 255, 0);
-//     //glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-//     nvgBeginFrame(vg, wh.x, wh.y, 1);
-//     nvgTranslate(vg, offset.x, offset.y);
-//     nvgScale(vg, scale.x, scale.y);
-// }
+void NVGContext::begin_frame(const ym_vec2i& wh, const ym_vec2r& offset, const ym_vec2r& scale) {
+    //glClearColor(255, 255, 255, 0);
+    //glClear(GL_COLOR_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    nvgBeginFrame(vg, wh.x, wh.y, 1);
+    nvgTranslate(vg, offset.x, offset.y);
+    nvgScale(vg, scale.x, scale.y);
+}
 
-// void NVGContext::end_frame(const ym_vec2r& offset, const ym_vec2r& scale) {
-//     nvgScale(vg, (double) 1.0 / scale.x,  (double) 1.0 / scale.x);
-//     nvgTranslate(vg, -offset.x, -offset.y);
-//     nvgEndFrame(vg);
-// }
+void NVGContext::end_frame(const ym_vec2r& offset, const ym_vec2r& scale) {
+    nvgScale(vg, (double) 1.0 / scale.x,  (double) 1.0 / scale.x);
+    nvgTranslate(vg, -offset.x, -offset.y);
+    nvgEndFrame(vg);
+}
 
 void SVGContext::draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill, string tag) {
     auto style = _svg_style(stroke, fill);

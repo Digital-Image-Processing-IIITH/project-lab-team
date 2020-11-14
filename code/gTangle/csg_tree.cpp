@@ -179,9 +179,10 @@ void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator
         a->content = new NodeContent(new_shapes);
     }
 }
+
 void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, vector<CSGTree::LeafNode*> as, Animator anim, int frame, bool update){
     for (auto&& a : as){
-        UpdateLeafNode(tree, a, anim, frame, frame, update);
+        UpdateLeafNode(tree, a, anim, frame, frame, 1, update);
     }
 }
 
@@ -208,6 +209,7 @@ void CSGTree::PropagateContent(CSGTree::Tree* tree, CSGTree::LeafNode* a){
         }
     }
 }
+
 
 void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a){
     switch (a->op_type) {

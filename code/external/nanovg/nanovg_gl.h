@@ -17,7 +17,7 @@
 //
 #ifndef NANOVG_GL_H
 #define NANOVG_GL_H
-typedef int GLuint; 
+
 #ifdef __cplusplus
 extern "C" {
 #endif

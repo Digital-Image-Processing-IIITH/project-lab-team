@@ -1,4 +1,5 @@
-#include <OpenGL/gl.h>
+#include <GL/gl.h>
+#include <GL/glcorearb.h>
 
 #define NANOVG_GL2_IMPLEMENTATION
 #include "nanovg.h"
