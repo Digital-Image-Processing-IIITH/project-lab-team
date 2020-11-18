@@ -1,11 +1,3 @@
-//
-//  animator.h
-//  tinygrammar
-//
-//  Created by Christian on 23/09/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
-
 #ifndef animator_h
 #define animator_h
 

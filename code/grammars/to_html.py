@@ -1,7 +1,7 @@
 import json
 from pprint import pprint
 
-with open('test_time_grammar_test_port.json') as data_file:    
+with open('test_time_grammar_test_teaser.json') as data_file:    
 	data = json.load(data_file)
 	for r_idx, rule in enumerate(data['rules']):
 		if rule["rule_name"].startswith("time"):

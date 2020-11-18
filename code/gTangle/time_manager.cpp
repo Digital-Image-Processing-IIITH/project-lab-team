@@ -1,11 +1,3 @@
-//
-//  time_manager.cpp
-//  tinygrammar
-//
-//  Created by Christian on 14/10/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
-
 #include "time_manager.h"
 
 

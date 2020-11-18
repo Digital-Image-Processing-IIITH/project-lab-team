@@ -1,0 +1,78 @@
+<li><span id="rule">
+	timeslice({0.01, 0.24, 0.75}) : [('a'), ('all')] -> ['id, setup, anim']
+</span></li>
+<li><span id="rule">
+	timeslice({0.15, 0.15, 0.2, 0.2, 0.15, 0.15}) : [('setup'), ('tri')] -> ['right, inv_right, scale, inv_scale, rot, inv_rot']
+</span></li>
+<li><span id="rule">
+	timeslice({0.15, 0.15, 0.7}) : [('setup'), ('translider')] -> ['right, inv_right, id']
+</span></li>
+<li><span id="rule">
+	timeslice({0.3, 0.2, 0.2, 0.3}) : [('setup'), ('scaleslider')] -> ['id, down, inv_down, id']
+</span></li>
+<li><span id="rule">
+	timeslice({0.7, 0.15, 0.15}) : [('setup'), ('rotate')] -> ['id, rot, inv_rot']
+</span></li>
+<li><span id="rule">
+	timeslice({0.15, 0.15, 0.2, 0.2, 0.15, 0.15}) : [('anim'), ('all')] -> ['anim1, anim2, anim3, inv_anim3, inv_anim2, inv_anim1']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , attribute([255.0, 200.0, 1.0, 200.0, 255.0, 200.0, 1.0, 200.0, 255.0, 200.0, 1.0, 200.0, 255.0, 200.0, 1.0, 0.0])) : [('id'), ('tri')] -> ['term_7']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , attribute([250.0, 159.0, 1.0, 255.0, 250.0, 159.0, 1.0, 255.0, 250.0, 159.0, 1.0, 255.0, 250.0, 159.0, 1.0, 0.0])) : [('id'), ('translider')] -> ['term_8']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , attribute([134.0, 106.0, 1.0, 255.0, 134.0, 106.0, 1.0, 255.0, 134.0, 106.0, 1.0, 255.0, 134.0, 106.0, 1.0, 0.0])) : [('id'), ('tranbar')] -> ['term_9']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , attribute([255.0, 200.0, 1.0, 200.0, 255.0, 200.0, 1.0, 200.0, 255.0, 200.0, 1.0, 200.0, 255.0, 200.0, 1.0, 0.0])) : [('id'), ('scaleslider')] -> ['term_10']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , attribute([255.0, 187.0, 1.0, 169.0, 255.0, 187.0, 1.0, 169.0, 255.0, 187.0, 1.0, 169.0, 255.0, 187.0, 1.0, 0.0])) : [('id'), ('scalebar')] -> ['term_11']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , attribute([204.0, 128.0, 1.0, 254.0, 204.0, 128.0, 1.0, 254.0, 204.0, 128.0, 1.0, 254.0, 204.0, 128.0, 1.0, 0.0])) : [('id'), ('rotate')] -> ['term_12']
+</span></li>
+<li><span id="rule">
+	animate('affine', group, 0.0 , translation([8.0, 0.0])) : [('right'), ('translider, tri')] -> ['term_13']
+</span></li>
+<li><span id="rule">
+	animate('affine', group, 0.0 , translation([0.0, 9.0])) : [('down'), ('scaleslider')] -> ['term_14']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.001 , scale([0.5])) : [('scale'), ('tri')] -> ['term_15']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , rotation([60.0])) : [('rot'), ('rotate, tri')] -> ['term_16']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , rotation([120.0])) : [('anim1'), ('rotate')] -> ['term_17']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , translation([0.0, 9.0])) : [('anim1'), ('scaleslider')] -> ['term_18']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.02 , rot_scale([-60.0, 0.5])) : [('anim1'), ('tri')] -> ['term_19']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , rotation([60.0])) : [('anim2'), ('rotate')] -> ['term_20']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , translation([0.0, -18.0])) : [('anim2'), ('scaleslider')] -> ['term_21']
+</span></li>
+<li><span id="rule">
+	animate('affine', group, 0.02 , rot_scale([-60.0, 1.5])) : [('anim2'), ('tri')] -> ['term_22']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , rotation([-120.0])) : [('anim3'), ('rotate')] -> ['term_23']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , translation([0.0, 12.0])) : [('anim3'), ('scaleslider')] -> ['term_24']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.0 , translation([-7.0, 0.0])) : [('anim3'), ('translider')] -> ['term_25']
+</span></li>
+<li><span id="rule">
+	animate('affine', single, 0.02 , affine([1.0, -0.982051, 1.73205, 2.29904, 0.0, 0.0])) : [('anim3'), ('tri')] -> ['term_26']
+</span></li>

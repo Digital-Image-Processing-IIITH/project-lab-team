@@ -1,11 +1,3 @@
-//
-//  input_figures.h
-//  tinygrammar
-//
-//  Created by Christian on 22/12/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
-
 #ifndef input_figures_h
 #define input_figures_h
 

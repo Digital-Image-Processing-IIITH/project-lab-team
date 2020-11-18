@@ -1,11 +1,3 @@
-//
-//  expansion_manager.hpp
-//  tinygrammar
-//
-//  Created by Christian Santoni on 6/10/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
-
 #ifndef expansion_manager_h
 #define expansion_manager_h
 

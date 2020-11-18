@@ -1,11 +1,3 @@
-//
-//  time_manager.h
-//  tinygrammar
-//
-//  Created by Christian on 14/10/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
-
 #ifndef time_manager_h
 #define time_manager_h
 

@@ -1,10 +1,3 @@
-//
-//  main_tag_svg.cpp
-//  tinygrammar
-//
-//  Created by Christian on 28/12/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
 
 #include <stdio.h>
 #include <functional>

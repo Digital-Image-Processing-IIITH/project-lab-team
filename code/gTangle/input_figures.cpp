@@ -1,11 +1,3 @@
-//
-//  input_figures.cpp
-//  tinygrammar
-//
-//  Created by Christian on 22/12/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
-
 #include "input_figures.h"
 
 CSGTree::Tree* standard_example(Grammar* g) {

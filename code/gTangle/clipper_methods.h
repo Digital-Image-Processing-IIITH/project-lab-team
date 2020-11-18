@@ -1,11 +1,3 @@
-//
-//  clipper_methods.h
-//  tinygrammar
-//
-//  Created by Christian on 19/09/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
-
 #ifndef clipper_methods_h
 #define clipper_methods_h
 

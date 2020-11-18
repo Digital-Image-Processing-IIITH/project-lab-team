@@ -1,11 +1,3 @@
-//
-//  clipper_methods.cpp
-//  tinygrammar
-//
-//  Created by Christian on 20/09/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
-
 #include "clipper_methods.h"
 
 inline clipper_point to_clipper_point(const ym_vec2r& p) { return clipper_point((p.x*clipper_scale),-(p.y*clipper_scale)); }

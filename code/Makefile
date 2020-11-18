@@ -8,8 +8,8 @@ This is an easier to use and modify makefile, but it is slightly more difficult 
 #
 
 # define the C compiler to use
-CC = gcc
-CXX = g++
+CC = gcc 
+CXX = g++ -w
 FIND = find
 
 # define any compile-time flags
@@ -65,7 +65,7 @@ SRCS = gTangle/animator.cpp\
 OBJS = $(SRCS:.cpp=.o)
 
 # define the executable file 
-MAIN = main_tag_svg main_timeline
+MAIN = main_tag_svg main_timeline main_prog
 
 #
 # The following part of the makefile is generic; it can be used to 
@@ -93,6 +93,8 @@ main_tag_svg:	$(OBJS) gTangle/main_tag_svg.o
 main_timeline:	$(OBJS) gTangle/main_timeline.o
 			$(CXX) $(CFLAGS) $(INCLUDES) -o $@ $^ $(LFLAGS) $(LIBS)
 
+main_prog:	$(OBJS) gTangle/main.o
+			$(CXX) $(CFLAGS) $(INCLUDES) -o $@ $^ $(LFLAGS) $(LIBS)
 
 clean:
 				$(RM) *.o *~ $(MAIN)

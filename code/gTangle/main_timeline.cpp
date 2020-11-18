@@ -68,8 +68,8 @@ int main(int argc, const char * argv[]) {
     
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);
-//    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/teaser.svg");
-     auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
+   auto tree = initialize_tree(grammar, 3, 5, "resources/svg/teaser.svg");
+    //  auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
 //    auto tree = initialize_tree(grammar, 2, 2, "resources/svg/test_tagged_2.svg"); // squares and circles
     
     auto init_step = matching_init();

@@ -1,10 +1,4 @@
-//
-//  animator_matrix.cpp
-//  tinygrammar
-//
-//  Created by Christian on 03/10/16.
-//  Copyright © 2016 visgraph. All rights reserved.
-//
+
 
 #include "animator_matrix.h"
 
