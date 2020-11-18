@@ -93,9 +93,6 @@ main_tag_svg:	$(OBJS) gTangle/main_tag_svg.o
 main_timeline:	$(OBJS) gTangle/main_timeline.o
 			$(CXX) $(CFLAGS) $(INCLUDES) -o $@ $^ $(LFLAGS) $(LIBS)
 
-main_prog:	$(OBJS) gTangle/main.o
-			$(CXX) $(CFLAGS) $(INCLUDES) -o $@ $^ $(LFLAGS) $(LIBS)
-
 clean:
 				$(RM) *.o *~ $(MAIN)
 				$(RM) $(OBJS)
