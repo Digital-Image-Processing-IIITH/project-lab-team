@@ -3,7 +3,7 @@
 ![Badge](https://img.shields.io/badge/Course-DIP-f94944)
 
 
-Implementation of the *SIGGRAPH 2016* paper [gTangle: A Grammar for the Procedural Generation of Tangle Patterns](documents/gTangle.pdf) in `C++`
+Implementation of the *SIGGRAPH 2016* paper [gTangle: A Grammar for the Procedural Generation of Tangle Patterns](documents/papers/gTangle.pdf) in `C++`
 
 ![Collage](media/Collage.jpg)
 
@@ -104,11 +104,11 @@ Here are some input SVGs and their corresponding tangles!
 [@Jyoti Sunkara](https://github.com/JyotiSunkara)
 
 ### Documents 
-- Project guidelines are [here](documents/guidelines.md)
+- Project guidelines are [here](documents/files/guidelines.md)
 
-- gTangle: A Grammar for the Procedural Generation of Tangle Patterns [Paper](documents/gTangle.pdf)
+- gTangle: A Grammar for the Procedural Generation of Tangle Patterns [Paper](documents/papers/gTangle.pdf)
 
-- Proposal for the project timeline can be found [here](documents/proposal.md)
+- Proposal for the project timeline can be found [here](documents/files/proposal.md)
 
 - Mid evaluations slides are [here](https://docs.google.com/presentation/d/17l0Tkhzg3QempJqMyVa7Vts7_oPK9UyUCqe227VFLWU/edit?usp=sharing)
 
